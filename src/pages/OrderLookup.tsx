@@ -85,10 +85,10 @@ const OrderLookup = () => {
               <div>
                 <Label htmlFor="order-id">Número do Pedido</Label>
                 <Input
-                  id="order-id"
-                  data-testid="search-order-id"
+                  data-testid="order-id-input"
                   type="text"
-                  placeholder="Ex: VLO-ABC123"
+                  id='order-id'
+                  placeholder="Ex: VLO-ABCD10"
                   value={orderId}
                   onChange={(e) => setOrderId(e.target.value)}
                   className="mt-1"
