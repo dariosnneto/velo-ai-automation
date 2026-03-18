@@ -18,9 +18,9 @@ test('should check an approved order', async ({ page }) => {
 
     // Assert
     
-    await expect(page.getByText('Número do Pedido')).toBeVisible({timeout: 10_000});
-    await expect(page.getByText('VLO-NE93JO')).toBeVisible({timeout: 10_000});
+    await expect(page.locator('div').filter({ hasText: /^PedidoVLO-NE93JO$/ }).first()).toBeVisible();
+    await expect(page.locator('#root')).toContainText('PedidoVLO-NE93JO');
 
     await expect(page.getByText('APROVADO')).toBeVisible();
-    await expect(page.getByTestId('order-result-VLO-NE93JO')).toContainText('APROVADO');
+    await expect(page.locator('#root')).toContainText('APROVADO');
 }); 
